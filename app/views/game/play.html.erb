@@ -1,0 +1,6 @@
+<%= turbo_frame_tag :game do %>
+	<h1><%= @player_message %></h1>
+	<p><%= @curb_message %></p>
+	<%= image_tag "game/#{@curb_choice}.svg", style: "width: 80px" %>
+	<%= link_to 'Play again', root_path, 'data-turbo-frame': '_top' %>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Rock - Paper - Scissors</h1>
+
+<p style="text-align: center; width: 300px;">Rock Paper Scissors is a zero sum game that is usually played by two people using their hands and no tools. The idea is to make shapes with an outstretched hand where each shape will have a certain degree of power and will lead to an outcome.</p>
+
+<%= turbo_frame_tag :game do %>
+	<%= button_to(game_play_path, remote: true, form: { style: "display: inline-block" }, params: {choice: :rock}, style: "display: inline-block") do %>
+		<%= image_tag "game/rock.svg", style: "width: 80px" %>
+	<% end %>
+
+	<%= button_to(game_play_path, remote: true, form: { style: "display: inline-block" }, params: {choice: :paper}) do %>
+		<%= image_tag "game/paper.svg", style: "width: 80px" %>
+	<% end %>
+
+	<%= button_to(game_play_path, remote: true, form: { style: "display: inline-block" }, params: {choice: :scissors}, style: "display: inline-block") do %>
+		<%= image_tag "game/scissors.svg", style: "width: 80px" %>
+	<% end %>
+<% end %>
